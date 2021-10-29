@@ -56,6 +56,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 }
 
+.m{
+  &-auto{
+    margin: auto !important;
+  }
+}
+
+.mt {
+  &-1{
+    margin-top: .5rem !important;
+  }
+
+  &-2{
+    margin-top: 1rem !important;
+  }
+}
+
 .mr{
   &-1{
     margin-right: .5rem !important;
@@ -72,5 +88,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
   &-2{
     margin-left: 1rem !important;
+  }
+}
+
+.width {
+  &-100{
+    width: 100% !important;
+  }
+
+  &-80{
+    width: 80% !important;
   }
 }

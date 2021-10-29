@@ -1,4 +1,11 @@
 
+.container{
+  max-width: 1024px;
+  margin: auto;
+  padding: 2rem 0;
+  min-height: calc(100vh - (135px + 2rem));
+}
+
 .home{
   padding-top: 1rem;
   padding-bottom: 1rem;

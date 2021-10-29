@@ -1,30 +1,51 @@
-<div class="container home">
-  <h4>Sucesión de Fibonacci</h4>
-
-  <ng-container *ngIf="formFibo">
-    <form [formGroup]="formFibo" (ngSubmit)="onSubmit()" class="pb-2">
-
-      <p>
-        <mat-form-field appearance="legacy">
-          <mat-label>Number</mat-label>
-          <input matInput placeholder="Number" formControlName="number" required>
-          <mat-error *ngIf="formFibo.controls.number.errors">This field is required</mat-error>
-
-        </mat-form-field>
-      </p>
 
 
-      <div class="text-right cont-btns">
-        <button mat-raised-button (click)="cancel()" class="mr-1">
-          Cancel
-        </button>
+<div  class="container">
+  <div class="home">
+    <mat-card class="width-80">
+      <mat-card-title class="pb-1">Sucesión de Fibonacci</mat-card-title>
 
-        <button mat-raised-button color="primary" type="submit" [disabled]="!formFibo.valid || !formFibo.valid">
-          Save
-        </button>
+      <ng-container *ngIf="formFibo">
+        <div class="width-100">
+          <div class="width-100 d-flex">
+            <form [formGroup]="formFibo" (ngSubmit)="onSubmit()" class="pb-2 width-100">
 
+              <p>
+                <mat-form-field appearance="legacy" class="width-100">
+                  <mat-label>Number</mat-label>
+                  <input matInput placeholder="Number" formControlName="number" required [min]="0">
+                  <mat-error *ngIf="formFibo.controls.number.errors && formFibo.controls.number.errors.required">This field is required</mat-error>
+                  <mat-error *ngIf="formFibo.controls.number.errors && formFibo.controls.number.errors.not_enabled"> You must enter a size greater than or equal to 1</mat-error>
+
+                </mat-form-field>
+              </p>
+
+              <div class="text-right cont-btns">
+                <button mat-raised-button (click)="cancel()" class="mr-1">
+                  Cancel
+                </button>
+
+                <button mat-raised-button color="primary" type="submit" [disabled]="!formFibo.valid || !formFibo.valid">
+                  Send
+                </button>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </ng-container>
+    </mat-card>
+
+    <mat-card *ngIf="result" class="width-80 mt-2">
+      Result:
+
+      <div class="width-100" *ngIf="result.length">
+        <ng-container *ngFor="let item of result; let i = index">
+          <span>{{ (i > 0 && i < result.length)? ', ' : '' }} {{item}} </span>
+        </ng-container>
       </div>
-    </form>
-  </ng-container>
+    </mat-card>
 
+  </div>
 </div>
+
