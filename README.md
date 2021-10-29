@@ -6,8 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Duplicate this repository to create a new repo for your project.
 
 ```
-$ git clone https://github.com/jjmmontilla/my-hotel-test.git
-$ cd my-hotel-test
+$ git clone https://github.com/jjmmontilla/fibo.git
+$ cd fibo
 ```
 
 ### Install dependencies
@@ -44,4 +44,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Authors
 
-* **Josefina Montilla** - *Initial work* - 21-05-2021
+* **Josefina Montilla** - *Initial work* - 29-10-2021
