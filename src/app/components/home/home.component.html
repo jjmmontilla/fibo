@@ -1,0 +1,30 @@
+<div class="container home">
+  <h4>Sucesión de Fibonacci</h4>
+
+  <ng-container *ngIf="formFibo">
+    <form [formGroup]="formFibo" (ngSubmit)="onSubmit()" class="pb-2">
+
+      <p>
+        <mat-form-field appearance="legacy">
+          <mat-label>Number</mat-label>
+          <input matInput placeholder="Number" formControlName="number" required>
+          <mat-error *ngIf="formFibo.controls.number.errors">This field is required</mat-error>
+
+        </mat-form-field>
+      </p>
+
+
+      <div class="text-right cont-btns">
+        <button mat-raised-button (click)="cancel()" class="mr-1">
+          Cancel
+        </button>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="!formFibo.valid || !formFibo.valid">
+          Save
+        </button>
+
+      </div>
+    </form>
+  </ng-container>
+
+</div>
