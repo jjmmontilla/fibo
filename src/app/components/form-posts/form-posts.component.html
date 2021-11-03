@@ -1,0 +1,31 @@
+
+
+  <div class="width-80 m-auto pt-1 pb-1">
+    <button mat-raised-button color="primary" (click)="back()">Atras</button>
+  </div>
+
+
+  <ng-container *ngIf="formPost">
+    <div class="width-80 m-auto pt-1 pb-1">
+      <h2>
+        Nuevo Post
+      </h2>
+
+      <form [formGroup]="formPost" (ngSubmit)="onSubmit()">
+
+        <mat-form-field class="width-100" appearance="fill">
+          <mat-label>Title</mat-label>
+          <input matInput placeholder="Title" formControlName="title">
+        </mat-form-field>
+
+        <mat-form-field class="width-100" appearance="fill">
+          <mat-label>Body</mat-label>
+          <textarea matInput placeholder="" formControlName="body"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">Create</button>
+      </form>
+    </div>
+  </ng-container>
+
